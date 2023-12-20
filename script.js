@@ -60,7 +60,7 @@ function cerrarVentanaEmergente() { //close emergent msg
 }
 
 window.onload = function () { //shows emergent msg inicializing the window
-    //mostrarVentanaEmergente();
+    mostrarVentanaEmergente();
 };
 
 

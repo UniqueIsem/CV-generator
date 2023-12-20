@@ -4,20 +4,260 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@800&family=Poppins&family=Sawarabi+Gothic&family=Sometype+Mono&display=swap');
 
 body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
     font-family: 'Poppins', sans-serif;
 }
 
 h1 {
-    font-family: 'Archivo Black', sans-serif;    
+    font-family: 'Archivo Black', sans-serif;
 }
 
-/*
-font-family: 'Archivo', sans-serif;
-font-family: 'Archivo Black', sans-serif;
-font-family: 'Poppins', sans-serif;
-font-family: 'Sawarabi Gothic', sans-serif;
-font-family: 'Sometype Mono', monospace;
-*/
+.nav-bar {
+    background-color: #013750;
+    color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-items,
+a {
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+.presentation-container {
+    display: flex;
+    justify-content: center;
+    padding: .7rem;
+}
+
+.presentation {
+    width: 50%;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.btn-start {
+    margin-top: 1.2rem;
+    background: none;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    background-color: #1bb0ce;
+    border-radius: 1rem;
+    padding: .5rem;
+    -webkit-animation: jello-horizontal 0.9s infinite both;
+    animation: jello-horizontal 0.9s infinite both;
+}
+
+@-webkit-keyframes jello-horizontal {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes jello-horizontal {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.presentation-side {
+    width: 50%;
+    padding: 1.5rem;
+}
+
+.presentation-background {
+    background: url(https://img.freepik.com/foto-gratis/negocios-concepto-entrevista-trabajo_1421-77.jpg?w=996&t=st=1703100943~exp=1703101543~hmac=eaf3c1de7fd6ae18bd247d52efc5ffd87b926cfefdfcad86e072d2b600403cb4);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.next-gen-text {
+    padding: .5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 1.5rem;
+}
+
+/*Reasons*/
+.container-reasons {
+    background: linear-gradient(to bottom, #013750 , #ffffff 100%);
+    background-color: #013750;
+    text-align: center;
+    color: #ffff;
+    padding: 1.5rem;
+
+}
+
+.text-reasons {
+    margin: auto;
+    max-width: 75%;
+}
+
+.reasons {
+    display: flex;
+    justify-content: space-around;
+    margin: 3rem;
+
+}
+
+.reason-background {
+    margin: 10px;
+    width: 400px;
+    height: 300px;
+    background-color: #262525;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 0px 0px 300px 0px rgba(255, 255, 255, 0.32);
+    -moz-box-shadow: 0px 0px 300px 0px rgba(255, 255, 255, 0.32);
+    box-shadow: 0px 0px 300px 0px rgba(255, 255, 255, 0.32);
+}
+
+.reason1,
+.reason2,
+.reason3 {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+
+}
+
+/*Companies*/
+.container-companies {
+    padding: 3rem;
+    display: flex;
+}
+
+.companies-icons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    margin: 1rem;
+}
+
+.companies-text-background {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Footer*/
+footer {
+    background-color: #013750;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-logo {
+    margin-right: 5rem;
+    font-size: 3rem;
+    text-shadow: rgba(255,255,255,1) 0px 0px 50px;
+}
+
+.vertical-line {
+    border: 1px solid #ffffff;
+    margin: 30px;
+}
+
+.footer-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-social-media {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.footer-info {
+    margin-left: 40px;
+}
 
 /* Estilo para la ventana emergente */
 .emergent-window-container {
@@ -31,6 +271,9 @@ font-family: 'Sometype Mono', monospace;
     border: 1px solid #ccc;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     z-index: 9999;
+    -webkit-box-shadow: 0px 0px 300px 90px rgba(46, 168, 255, 0.89);
+    -moz-box-shadow: 0px 0px 300px 90px rgba(46, 168, 255, 0.89);
+    box-shadow: 0px 0px 300px 90px rgba(46, 168, 255, 0.89);
 }
 
 /* Estilo para el fondo oscuro tras la ventana emergente */
