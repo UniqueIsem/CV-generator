@@ -1,3 +1,42 @@
+let currentFromIndex = 0;
+const forms = document.querySelectorAll('.form');
+const formData = [];
+
+function showForm(index) {
+    forms.forEach((form, i) => {
+        form.style.display = i === index ? 'block' : 'none';
+    });
+}
+
+function nextForm() {
+    if (currentFromIndex < forms.length - 1) {
+        currentFromIndex++;
+        showForm(currentFromIndex);
+    }
+}
+
+function prevForm() {
+    if (currentFromIndex > 0) {
+        currentFromIndex--;
+        showForm(currentFromIndex);
+    }
+}
+
+function saveInfo() {
+    const currentForm = forms[currentFromIndex];
+    const inputs = currentForm.querySelectorAll('input, textarea');
+
+    const formObject = {};
+    inputs.forEach(input => {
+        formObject[input.name] = input.value;
+    });
+
+    formData[currentFromIndex] = formObject;
+    console.log(formData);
+}
+
+
+
 function addTechSkill() { //add technical skill
     var techSkillInput = document.getElementById('technicalSkills');
     var listTechSkills = document.getElementById('listaHabilidadesTecnicas');
@@ -60,7 +99,7 @@ function cerrarVentanaEmergente() { //close emergent msg
 }
 
 window.onload = function () { //shows emergent msg inicializing the window
-    mostrarVentanaEmergente();
+    //mostrarVentanaEmergente();
 };
 
 
