@@ -18,9 +18,14 @@ h1 {
 .nav-bar {
     background-color: #013750;
     color: #ffffff;
-    padding: 1rem;
     display: flex;
     justify-content: space-between;
+}
+
+.logo {
+    text-align: center;
+    text-shadow: rgba(255, 255, 255, 1) 0px 0px 40px;
+    margin-left: 3rem;
 }
 
 .nav-items,
@@ -28,6 +33,7 @@ a {
     list-style: none;
     text-decoration: none;
     color: inherit;
+    margin-right: 3rem;
 }
 
 .presentation-container {
@@ -142,6 +148,12 @@ a {
     border-radius: 50%;
     display: grid;
     place-items: center;
+    transform: scale(0);
+    transition: transform .5s ease;
+}
+
+.presentation-background.popup {
+    transform: scale(1);
 }
 
 .next-gen-text {
@@ -154,7 +166,7 @@ a {
 
 /*Reasons*/
 .container-reasons {
-    background: linear-gradient(to bottom, #013750 , #ffffff 100%);
+    background: linear-gradient(to bottom, #013750, #ffffff 100%);
     background-color: #013750;
     text-align: center;
     color: #ffff;
@@ -235,7 +247,7 @@ footer {
 .footer-logo {
     margin-right: 5rem;
     font-size: 3rem;
-    text-shadow: rgba(255,255,255,1) 0px 0px 50px;
+    text-shadow: rgba(255, 255, 255, 1) 0px 0px 50px;
 }
 
 .vertical-line {
@@ -284,6 +296,7 @@ footer {
     padding: 20px;
     background-color: #262525;
     color: #ffffff;
+    border-radius: 2rem;
     z-index: 9999;
     -webkit-box-shadow: 0px 0px 300px 90px rgba(46, 168, 255, 0.89);
     -moz-box-shadow: 0px 0px 300px 90px rgba(46, 168, 255, 0.89);
@@ -294,10 +307,13 @@ button.btn-close {
     background-color: #ffffff;
     border-radius: 50%;
     padding: .5rem;
+    cursor: pointer;
 }
 
 .steps-container {
     display: grid;
+    margin-left: 10%;
+    margin-right: 10%;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -326,14 +342,129 @@ button.btn-close {
 }
 
 /*Formulario*/
+.body-form {
+    min-height: 100vh;
+    background-image: url(imgs/background-buildings.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.nav-bar-forms {
+    background-color: #013750;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-items-form,
+li,
+a {
+    display: inline-block;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: .05s;
+}
+
+li:hover {
+    font-size: large;
+}
+
 .background-forms {
-    background: linear-gradient(to bottom right, #0371a4, #1bb0ce, #ffffff);
+    display: grid;
+    place-items: centers;
 }
 
 .container-forms {
-
+    display: flex;
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 568);
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    margin-top: 2rem;
 }
 
-.form {
-    display: none;
+.form-field {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 10px;
 }
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #262525;
+    margin: 10px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #262525;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+    font-weight: bold;
+    font-size:larger;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label,
+.input-box input:hover~label {
+    top: -5px;
+}
+ 
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #262525;
+    font-weight: 600;
+}
+
+.nav-forms {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+.btn-prev,
+.btn-next {
+    border-style: none;
+    background: #013750;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 1rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-prev:hover,
+.btn-next:hover {
+    border: 2px solid #013750;
+    color: #013750;
+    background-color: #ffffff;
+}
+
+

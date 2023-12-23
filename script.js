@@ -3,8 +3,9 @@ const forms = document.querySelectorAll('.form');
 const formData = [];
 
 function showForm(index) {
+    console.log(index);
     forms.forEach((form, i) => {
-        form.style.display = i === index ? 'block' : 'none';
+        form.classList.toggle('active', i === index);
     });
 }
 
@@ -21,6 +22,8 @@ function prevForm() {
         showForm(currentFromIndex);
     }
 }
+
+showForm(currentFromIndex);
 
 function saveInfo() {
     const currentForm = forms[currentFromIndex];
@@ -99,6 +102,8 @@ function cerrarVentanaEmergente() { //close emergent msg
 }
 
 window.onload = function () { //shows emergent msg inicializing the window
+    const img = document.querySelector('.presentation-background');
+    img.classList.add('popup')
     //mostrarVentanaEmergente();
 };
 
