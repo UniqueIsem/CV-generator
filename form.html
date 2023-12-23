@@ -49,137 +49,151 @@
         </div>
     </nav>
     <div class="background-forms mt-4">
-        <div class="container-forms">
-            <!--Personal Info-->
-            <form class="form" id="personal-info">
-                <h1>Información personal</h1>
-                <div class="form-field">
-                    <div class="input-box">
-                        <input type="text" class="input" id="nombres" name="nombres" required>
-                        <label for="nombres">Nombres</label>
+        <div class="container-forms-blur">
+            <div class="container-forms">
+                <!--Personal Info-->
+                <form class="form" id="personal-info">
+                    <h1>Información personal</h1>
+                    <div class="form-field">
+                        <div class="input-box">
+                            <input type="text" class="input" id="nombres" name="nombres" required>
+                            <label for="nombres">Nombres</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" class="input" id="apellidos" name="apellidos" required>
+                            <label for="apellidos">Apellidos</label>
+                        </div>
                     </div>
-                    <div class="input-box">
-                        <input type="text" class="input" id="apellidos" name="apellidos" required>
-                        <label for="apellidos">Apellidos</label>
+                    <div class="form-field">
+                        <div class="input-box">
+                            <input type="text" class="input" id="region" name="region" required>
+                            <label for="region">Región</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="tel" class="input" id="telefono" name="telefono" required>
+                            <label for="telefono">Telefono</label>
+                        </div>
                     </div>
-                </div>
-                <div class="form-field">
-                    <div class="input-box">
-                        <input type="text" class="input" id="region" name="region" required>
-                        <label for="region">Región</label>
+                    <div class="form-field">
+                        <div class="input-box">
+                            <input type="email" class="input" id="email" name="email" required>
+                            <label for="email">Correo electronico</label>
+                        </div>
                     </div>
-                    <div class="input-box">
-                        <input type="tel" class="input" id="telefono" name="telefono" required>
-                        <label for="telefono">Telefono</label>
-                    </div>
-                </div>
-                <div class="form-field">
-                    <div class="input-box">
-                        <input type="email" class="input" id="email" name="email" required>
-                        <label for="email">Correo electronico</label>
-                    </div>
-                </div>
-                <div class="nav-forms">
-                    <button class="btn-prev" onclick="prevForm()">Anterior</button>
-                    <button class="btn-next" onclick="nextForm()">Siguiente</button>
-                </div>
-            </form>
+                </form>
 
+                <form class="form" id="education">
+                    <h1>Periodo de estudios</h1>
+                    <div class="form-field">
+                        <div class="input-box">
+                            <input type="number" class="input" id="inicio" min="1900" max="2100" required>
+                            <label for="inicio">Inicio</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" class="input" id="graduacion" min="1900" max="2100" required>
+                            <label for="graduacion">Graduación</label>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="input-box">
+                            <input type="text" class="input" id="escuela" name="escuela" required>
+                            <label for="escuela">Escuela</label>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="text-area-box">
+                            <textarea class="form-control" id="formacion-academica" name="formacion-academica" rows="4"
+                                required></textarea>
+                            <label for="formacion-academica">Formación academica</label>
+                        </div>
+                    </div>
+                </form>
 
-            <form class="form" id="education">
-                <h1>Periodo de estudios</h1>
-                <div class="form-field">
-                    <div class="input-box">
-                        <input type="number" class="input" id="inicio" min="1900" max="2100" required>
-                        <label for="inicio">Inicio</label>
+                <form class="form" id="tech-skills">
+                    <h1>Habilidades técnicas</h1>
+                    <div class="form-field">
+                        <div class="input-box">
+                            <input class="input" id="tech-skills" name="tech-skills" rows="4" required>
+                            <label for="tech-skills">Habilidades técnicas</label>
+                        </div>
                     </div>
-                    <div class="input-box">
-                        <input type="number" class="input" id="graduacion" min="1900" max="2100" required>
-                        <label for="graduacion">Graduación</label>
+                    <div class="form-field">
+                        <ul id="listaHabilidadesTecnicas" class="list-group"></ul>
+                        <button type="button" class="btn-add-tech-skill">Add Tech Skill</button>
                     </div>
-                </div>
-                <div class="form-field">
-                    <div class="input-box">
-                        <input type="text" class="input" id="escuela" name="escuela" required>
-                        <label for="escuela">Escuela</label>
-                    </div>
-                </div>
-                <div class="form-field">
-                    <div class="input-box">
-                        <textarea class="form-control" id="formacion-academica" name="formacion-academica" rows="4"
-                            required></textarea>
-                        <label for="formacion-academica">Formación academica</label>
-                    </div>
-                </div>
-            </form>
+                </form>
 
-            <form class="form" id="tech-skills">
-                <h1>Habilidades técnicas</h1>
-                <div class="form-field">
-                    <div class="input-box">
-                        <input class="input" id="tech-skills" name="tech-skills" rows="4" required>
-                        <label for="tech-skills">Habilidades técnicas</label>
+                <form class="form" id="soft-skills">
+                    <h1>Habilidades extra</h1>
+                    <div class="form-field">
+                        <div class="input-box">
+                            <input class="input" id="soft-skills" name="soft-skills" rows="4" required></input>
+                            <label for="soft-skills">Habilidades</label>
+                        </div>
                     </div>
-                </div>
-                <ul id="listaHabilidadesTecnicas" class="list-group"></ul>
-                <button type="button" class="btn-add" onclick="addTechSkill()">Add Tech Skill</button>
-            </form>
+                    <div class="form-field">
+                        <ul id="listaHabilidades" class="list-group"></ul>
+                        <button type="button" class="btn-add-soft-skill">Add Skill</button>
+                    </div>
+                </form>
 
-            <form class="form" id="soft-skills">
-                <div class="form-field">
-                    <div class="input-box">
-                        <input class="input" id="soft-skills" name="soft-skills" rows="4" required></input>
-                        <label for="soft-skills">Habilidades</label>
+                <form class="form" id="experience">
+                    <h1>Experiencia profesional</h1>
+                    <div class="form-field">
+                        <div class="input-box">
+                            <input type="text" class="input" id="empresa" name="empresa" required>
+                            <label for="empresa">Empresa</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="date" class="input" id="inicio-job" name="inicio-job" required>
+                            <label for="inicio-job">Inicio</label>
+                        </div>
                     </div>
-                </div>
-                <ul id="listaHabilidades" class="list-group"></ul>
-                <button type="button" class="btn-add" onclick="addSkill()">Add Skill</button>
-            </form>
+                    <div class="form-field">
+                        <div class="input-box">
+                            <input type="text" class="input" id="puesto" name="puesto" required>
+                            <label for="puesto">Puesto</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="date" class="input" id="final-job" name="final-job" required>
+                            <label for="final-job">Terminación</label>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="text-area-box">
+                            <label for="experiencia-profesional" class="form-label">Experiencia profesional:</label>
+                            <textarea class="form-control" id="experiencia-profesional" name="experiencia-profesional"
+                                rows="4" required></textarea>
+                        </div>
+                    </div>
+                </form>
 
-            <form class="form" id="experience">
-                <h1>Experiencia profesional</h1>
-                <div class="form-field">
-                    <div class="input-box">
-                        <input type="text" class="input" id="empresa" name="empresa" required>
-                        <label for="empresa">Empresa</label>
+                <form class="form" id="summary">
+                    <h1>Resumen</h1>
+                    <div class="form-field">
+                        <div class="text-area-box">
+                            <label for="summary" class="form-label">Resumen:</label>
+                            <textarea class="form-control" id="summary" name="summary" rows="4" required></textarea>
+                        </div>
                     </div>
-                    <div class="input-box">
-                        <input type="date" class="input" id="inicio-job" name="inicio-job" required>
-                        <label for="inicio-job">Inicio</label>
-                    </div>
-                </div>
-                <div class="form-field">
-                    <div class="input-box">
-                        <input type="text" class="input" id="puesto" name="puesto" required>
-                        <label for="puesto">Puesto</label>
-                    </div>
-                    <div class="input-box">
-                        <input type="date" class="input" id="final-job" name="final-job" required>
-                        <label for="final-job">Terminación</label>
-                    </div>
-                </div>
-                <label for="experiencia-profesional" class="form-label">Experiencia profesional:</label>
-                <textarea class="form-control" id="experiencia-profesional" name="experiencia-profesional" rows="4"
-                    required></textarea>
-            </form>
+                </form>
+            </div>
 
-            <form class="form" id="summary">
-                <h1>Resumen</h1>
-                <label for="summary" class="form-label">Resumen:</label>
-                <textarea class="form-control" id="summary" name="summary" rows="4" required></textarea>
-            </form>
+            <div class="nav-forms">
+                <button class="btn-prev">Anterior</button>
+                <button class="btn-next">Siguiente</button>
+                <button class="btn-pdf">Generar PDF</button>
+            </div>
 
-            <!--
-                <nav class="nav-forms">
-                <button class="btn btn-success" onclick="prevForm()">Anterior</button>
-                <button class="btn btn-success" onclick="nextForm()">Siguiente</button>
-                <button type="button" class="btn btn-primary" onclick="generarPDF()">Generar PDF</button>
-            </nav>
-            -->
-
-            </form>
         </div>
     </div>
+
+    <script>
+        window.onload = function () { //shows emergent msg inicializing the window
+            //mostrarVentanaEmergente();
+        };
+    </script>
+
 </body>
 
 </html>

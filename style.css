@@ -374,19 +374,38 @@ li:hover {
 
 .background-forms {
     display: grid;
-    place-items: centers;
+    place-items: center;
 }
 
-.container-forms {
-    display: flex;
+.container-forms-blur {
     backdrop-filter: blur(20px);
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 16px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 568);
     width: 50%;
-    height: 100%;
+    height: 550px;
     margin: auto;
     margin-top: 2rem;
+}
+
+.container-forms {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    /*transform: scale(0);*/
+    font-size: smaller;
+    opacity: .5;
+    transition: transform .5s ease, font-size .5s ease, opacity .5s ease;
+}
+
+.form.active {
+    margin: auto;
+    font-size:large;
+    opacity: 1;
+    /*transform: scale(1);*/
 }
 
 .form-field {
@@ -442,13 +461,33 @@ li:hover {
     display: flex;
     justify-content: space-around;
     height: 50px;
-    margin-bottom: 1rem;
 }
 
 .btn-prev,
 .btn-next {
     border-style: none;
-    background: #013750;
+    background: linear-gradient(to top right, #013750 20%, #ffffff 150%);    
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 1rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-prev:hover,
+.btn-next:hover {
+    border: 1px solid #013750;
+    color: #013750;
+    background: linear-gradient(to top right, #ffffff 20%, #013750 150%);
+}
+
+.btn-pdf {
+    border-style: none;
+    background: linear-gradient(to top right, rgb(170, 9, 9) 20%, #ffffff 150%);
     font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
@@ -460,11 +499,10 @@ li:hover {
     transition: 0.5s;
 }
 
-.btn-prev:hover,
-.btn-next:hover {
-    border: 2px solid #013750;
-    color: #013750;
-    background-color: #ffffff;
+.btn-pdf:hover {
+    border: 2px solid rgb(170, 9, 9);
+    color: rgb(170, 9, 9);
+    background: linear-gradient(to bottom left, #ffffff 20%, rgb(170, 9, 9) 150%);
 }
 
 
