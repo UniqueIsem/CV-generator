@@ -10,11 +10,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showForm(index) {
         forms.forEach((form, i) => {
-            if (i === index) {
+            form.classList.remove('active', 'hidden');
+            switch (i) {
+                case index:
+                    form.classList.add('active');
+                    break;
+                case index - 1:
+                    form.classList.add('left');
+                    break;
+                case index + 1:
+                    form.classList.add('right');
+                    break;
+                default:
+                    form.classList.remove('active', 'left', 'right');
+                    form.classList.add('hidden');
+                    break;
+            }
+
+            /*if (i === index) {
                 form.classList.add('active');
             } else {
                 form.classList.remove('active');
-            }
+            }*/
         });
     }
 
@@ -64,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             listTechSkills.appendChild(newTechSkill); //add skill to list
             techSkillInput.value = '';
-        }else {
+        } else {
             alert('campo incompleto');
         }
     }

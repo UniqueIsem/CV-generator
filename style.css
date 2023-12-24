@@ -345,7 +345,7 @@ button.btn-close {
 .body-form {
     min-height: 100vh;
     background-image: url(imgs/background-buildings.jpg);
-    background-size: cover;
+    background-size:cover;
     background-position: center;
 }
 
@@ -375,37 +375,51 @@ li:hover {
 .background-forms {
     display: grid;
     place-items: center;
+    height: 100vh;
 }
 
-.container-forms-blur {
-    backdrop-filter: blur(20px);
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 568);
-    width: 50%;
-    height: 550px;
+.container {
+    width: 90%;
+    height: 100%;
     margin: auto;
     margin-top: 2rem;
 }
 
 .container-forms {
-    height: 80%;
+    height: 70%;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.form {
+form {
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 568);
+    height: 90%;
+}
+
+.form.hidden {
+    display: none;
     /*transform: scale(0);*/
+    transition: transform .5s ease;
+}
+
+.form.left,
+.form.right {
     font-size: smaller;
     opacity: .5;
-    transition: transform .5s ease, font-size .5s ease, opacity .5s ease;
+    /*transform: scale(1);*/
+    transition: font-size .5s ease, opacity .5s ease, height .5 ease;
+    height: 80%;
+    width: 40%;
 }
 
 .form.active {
-    margin: auto;
     font-size:large;
     opacity: 1;
-    /*transform: scale(1);*/
+    height: 100%;
+    width: 80%;
 }
 
 .form-field {
@@ -457,10 +471,10 @@ li:hover {
 }
 
 .nav-forms {
+    padding: 10px;
     text-align: center;
     display: flex;
     justify-content: space-around;
-    height: 50px;
 }
 
 .btn-prev,
