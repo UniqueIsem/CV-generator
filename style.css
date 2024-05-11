@@ -345,7 +345,7 @@ button.btn-close {
 .body-form {
     min-height: 100vh;
     background-image: url(imgs/background-buildings.jpg);
-    background-size:cover;
+    background-size: cover;
     background-position: center;
 }
 
@@ -416,7 +416,7 @@ form {
 }
 
 .form.active {
-    font-size:large;
+    font-size: large;
     opacity: 1;
     height: 100%;
     width: 80%;
@@ -449,7 +449,7 @@ form {
     pointer-events: none;
     transition: .5s;
     font-weight: bold;
-    font-size:larger;
+    font-size: larger;
 }
 
 .input-box input:focus~label,
@@ -457,7 +457,7 @@ form {
 .input-box input:hover~label {
     top: -5px;
 }
- 
+
 
 .input-box input {
     width: 100%;
@@ -470,6 +470,49 @@ form {
     font-weight: 600;
 }
 
+.text-area-box {
+    width: 100%;
+    height: 100%;
+    margin-inline: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid #262525;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-add-tech-skill,
+.btn-add-soft-skill {
+    width: 100%;
+    margin-block: 1rem;
+    padding: 0.5rem;
+    border-style: none;
+    background: linear-gradient(to top right, #013750 20%, #ffffff 150%);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.list-group {
+    margin-left: 0;
+    margin-block-start: 3rem;
+}
+
+/*Skills items design*/
+.form-field ul li {
+    border-radius: 10px;
+    border: 3px solid #262525;
+    padding-inline: 1rem;
+    margin-block-end: 0.7rem;
+}
+
 .nav-forms {
     padding: 10px;
     text-align: center;
@@ -480,7 +523,7 @@ form {
 .btn-prev,
 .btn-next {
     border-style: none;
-    background: linear-gradient(to top right, #013750 20%, #ffffff 150%);    
+    background: linear-gradient(to top right, #013750 20%, #ffffff 150%);
     font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
@@ -518,5 +561,3 @@ form {
     color: rgb(170, 9, 9);
     background: linear-gradient(to bottom left, #ffffff 20%, rgb(170, 9, 9) 150%);
 }
-
-

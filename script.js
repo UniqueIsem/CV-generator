@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     showForm(currentFromIndex);
 
     function saveInfo() {
-        const currentForm = forms[currentFromIndex];
+        const currentForm = forms[currentFromIndex - 1];
         const inputs = currentForm.querySelectorAll('input, textarea');
 
         const formObject = {};
@@ -62,8 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
             formObject[input.name] = input.value;
         });
 
-        formData[currentFromIndex] = formObject;
-        console.log(formData);
+        formData[currentFromIndex] = formObject - 1;
+        //console.log(formData);
+        console.log(formObject);
     }
 
 
