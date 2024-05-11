@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.btn-prev').addEventListener('click', prevForm);
     document.querySelector('.btn-next').addEventListener('click', nextForm);
     document.querySelector('.btn-pdf').addEventListener('click', generarPDF);
+    document.querySelector('.btn-pdf').addEventListener('click', function(event){
+        event.preventDefault(); //Avoid page reload
+        generarPDF();
+    });
+
     let currentFromIndex = 0;
     const forms = document.querySelectorAll('.form');
     const formObject = [];
@@ -53,25 +58,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     showForm(currentFromIndex);
 
-    function saveInfo() {
+    function saveInfo() { //save info from current form
         const currentForm = forms[currentFromIndex - 1];
-        const inputs = currentForm.querySelectorAll('input, textarea, li');
+        const inputs = currentForm.querySelectorAll('input, textarea');
+        const listItems = currentForm.querySelectorAll('ul.list-group li')
 
         const formInfo = {};
+
+        //Get values from input and txtArea
         inputs.forEach(input => {
             formInfo[input.name] = input.value;
         });
+
+        //Get values of ul li elements
+        const listItemsValues = [];
+        listItems.forEach(item => {
+            listItemsValues.push(item.textContent);
+        });
+        formInfo['listItems'] = listItemsValues;
 
         formObject[currentFromIndex] = formInfo - 1;
         console.log(formInfo);
     }
 
-
-
     function addTechSkill() { //add technical skill
         var techSkillInput = document.getElementById('tech-skills');
         var listTechSkills = document.getElementById('ulHabilidadesTecnicas');
-        var msgError = document.getElementById('message-error');
+        var msgError = document.getElementById('message-error-tech-skills');
 
         var techSkill = techSkillInput.value;//obtain input value
 
@@ -92,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function addSkill() { //add soft skill
         var skillInput = document.getElementById('soft-skills');
         var listSkills = document.getElementById('ulHabilidades');
-        var msgError = document.getElementById('message-error');
+        var msgError = document.getElementById('message-error-soft-skills');
 
         var skill = skillInput.value.trim(); //obtain input value
 
@@ -125,18 +138,19 @@ function goToForm() { //redirect us to form window
 }
 
 function generarPDF() { //generate pdf
+    const { jsPDF } = jspdf;
+    const pdf = new jsPDF();
+
     const nombres = document.getElementById('nombres').value;
     const apellidos = document.getElementById('apellidos').value;
     const region = document.getElementById('region').value;
     const telefono = document.getElementById('telefono').value;
     const email = document.getElementById('email').value;
 
-    const pdf = new jsPDF();
-
     //Add PDF content
     pdf.text(20, 20, `Currículum Vitae de ${nombres} ${apellidos}`);
-    pdf.text(20, 20, `${region}`);
-    pdf.text(20, 20, `Currículum Vitae de ${telefono} - ${email}`);
+    pdf.text(20, 30, `${region}`);
+    pdf.text(20, 40, `Currículum Vitae de ${telefono} - ${email}`);
     // Agrega más contenido según sea necesario
 
     pdf.save('curriculum.pdf');
