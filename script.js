@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.btn-pdf').addEventListener('click', generarPDF);
     let currentFromIndex = 0;
     const forms = document.querySelectorAll('.form');
-    const formData = [];
+    const formObject = [];
 
     function showForm(index) {
         forms.forEach((form, i) => {
@@ -55,27 +55,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function saveInfo() {
         const currentForm = forms[currentFromIndex - 1];
-        const inputs = currentForm.querySelectorAll('input, textarea');
+        const inputs = currentForm.querySelectorAll('input, textarea, li');
 
-        const formObject = {};
+        const formInfo = {};
         inputs.forEach(input => {
-            formObject[input.name] = input.value;
+            formInfo[input.name] = input.value;
         });
 
-        formData[currentFromIndex] = formObject - 1;
-        //console.log(formData);
-        console.log(formObject);
+        formObject[currentFromIndex] = formInfo - 1;
+        console.log(formInfo);
     }
 
 
 
     function addTechSkill() { //add technical skill
         var techSkillInput = document.getElementById('tech-skills');
-        var listTechSkills = document.getElementById('listaHabilidadesTecnicas');
+        var listTechSkills = document.getElementById('ulHabilidadesTecnicas');
+        var msgError = document.getElementById('message-error');
 
-        var techSkill = techSkillInput.value.trim();//obtain input value
+        var techSkill = techSkillInput.value;//obtain input value
 
         if (techSkill !== '') {
+            msgError.style.display = 'none';
+
             var newTechSkill = document.createElement('li');
             newTechSkill.className = 'list-group-item';
             newTechSkill.textContent = techSkill;
@@ -83,17 +85,19 @@ document.addEventListener('DOMContentLoaded', function () {
             listTechSkills.appendChild(newTechSkill); //add skill to list
             techSkillInput.value = '';
         } else {
-            alert('campo incompleto');
+            msgError.style.display = 'flex';
         }
     }
 
     function addSkill() { //add soft skill
         var skillInput = document.getElementById('soft-skills');
-        var listSkills = document.getElementById('listaHabilidades');
+        var listSkills = document.getElementById('ulHabilidades');
+        var msgError = document.getElementById('message-error');
 
         var skill = skillInput.value.trim(); //obtain input value
 
         if (skill != '') {
+            msgError.style.display = 'none';
             var newSkill = document.createElement('li');
             newSkill.className = 'list-group-item';
             newSkill.textContent = skill;
@@ -101,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
             listSkills.appendChild(newSkill); //add skill to list
             skillInput.value = '';
         } else {
-            alert('campo incompleto');
+            msgError.style.display = 'flex';
         }
     }
 });

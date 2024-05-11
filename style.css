@@ -424,10 +424,16 @@ form {
 
 .form-field {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 10px;
+}
+
+.form-label {
+    color: #262525;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .input-box {
@@ -483,6 +489,12 @@ textarea {
     border-radius: 10px;
     border: 2px solid #262525;
     font-family: 'Poppins', sans-serif;
+}
+
+.message-error {
+    display: none;
+    color: #b30000;
+    font-weight: bold;
 }
 
 .btn-add-tech-skill,

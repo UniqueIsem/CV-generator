@@ -103,7 +103,7 @@
                     </div>
                     <div class="form-field">
                         <div class="text-area-box">
-                            <label for="formacion-academica">Formación academica</label>
+                            <label for="formacion-academica" class="form-label">Formación academica</label>
                             <textarea class="form-control" id="formacion-academica" name="formacion-academica" rows="4"
                                 required></textarea>
                         </div>
@@ -120,7 +120,12 @@
                         </div>
                     </div>
                     <div class="form-field">
-                        <ul id="listaHabilidadesTecnicas" class="list-group"></ul>
+                        <ul id="ulHabilidadesTecnicas" class="list-group"></ul>
+                    </div>
+                    <div class="form-field">
+                        <div class="message-error" id="message-error">
+                            <h4>CAMPO INCPMPLETO</h4>
+                        </div>
                     </div>
                 </form>
 
@@ -134,7 +139,12 @@
                         </div>
                     </div>
                     <div class="form-field">
-                        <ul id="listaHabilidades" class="list-group"></ul>
+                        <ul id="ulHabilidades" class="list-group"></ul>
+                    </div>
+                    <div class="form-field">
+                        <div class="message-error" id="message-error">
+                            <h4>CAMPO INCPMPLETO</h4>
+                        </div>
                     </div>
                 </form>
 
@@ -184,8 +194,8 @@
             </div>
 
             <div class="nav-forms">
-                <button class="btn-prev">Anterior</button>
-                <button class="btn-next">Siguiente</button>
+                <button class="btn-prev" id="btn-prev">Anterior</button>
+                <button class="btn-next" id="btn-next">Siguiente</button>
             </div>
 
         </div>
