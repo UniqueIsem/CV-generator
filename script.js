@@ -200,6 +200,12 @@ function mostrarPDF() {
     const experiencia = document.getElementById('experiencia-profesional').value;
     //6th form
     const resumen = document.getElementById('summary').value;
+    const url1Name = document.getElementById('url-1-descripcion');
+    const url1 = document.getElementById('url-1');
+    const url2Name = document.getElementById('url-2-descripcion');
+    const url2 = document.getElementById('url-2');
+    const url3Name = document.getElementById('url-3-descripcion');
+    const url3 = document.getElementById('url-3');
 
     //personal information
     pdf.text(20, 20, `${nombres} ${apellidos}`);
@@ -227,6 +233,9 @@ function mostrarPDF() {
     pdf.text(20, 170, `TECHNICAL SKILLS`);
     pdf.line(20, 175, 300, 175);
     pdf.text(20, 180, `${resumen}`);
+    pdf.text(20, 190, `${url1Name}: ${url1}`);
+    pdf.text(20, 200, `${url2Name}: ${url2}`);
+    pdf.text(20, 210, `${url3Name}: ${url3}`);
     
 
 

@@ -436,7 +436,8 @@ form {
     font-weight: bold;
 }
 
-.input-box {
+.input-box,
+.input-box-url {
     position: relative;
     width: 100%;
     height: 50px;
@@ -444,7 +445,8 @@ form {
     margin: 10px;
 }
 
-.input-box label {
+.input-box label,
+.input-box-url label {
     position: absolute;
     top: 50%;
     left: 5px;
@@ -460,12 +462,16 @@ form {
 
 .input-box input:focus~label,
 .input-box input:valid~label,
-.input-box input:hover~label {
+.input-box input:hover~label,
+.input-box-url input:focus~label,
+.input-box-url input:valid~label,
+.input-box-url input:hover~label  {
     top: -5px;
 }
 
 
-.input-box input {
+.input-box input, 
+.input-box-url input {
     width: 100%;
     height: 100%;
     background-color: transparent;
