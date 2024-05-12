@@ -175,18 +175,60 @@ function mostrarPDF() {
     const { jsPDF } = jspdf;
     const pdf = new jsPDF();
 
+    //1st form
     const nombres = document.getElementById('nombres').value;
     const apellidos = document.getElementById('apellidos').value;
     const pais = document.getElementById('pais').value;
     const estado = document.getElementById('estado').value;
     const telefono = document.getElementById('telefono').value;
     const email = document.getElementById('email').value;
+    //2nd form
+    const inicioEstudios = document.getElementById('inicio').value;
+    const graduacion = document.getElementById('graduacion').value;
+    const carrera = document.getElementById('carrera').value;
+    const escuela = document.getElementById('escuela').value;
+    const formacion = document.getElementById('formacion-academica').value;
+    //3rd form
 
-    //Add PDF content
+    //4th form
+
+    //5th form
+    const empresa = document.getElementById('empresa').value;
+    const inicioJob = document.getElementById('inicio-job').value;
+    const puesto = document.getElementById('puesto').value;
+    const finalJob = document.getElementById('final-job').value;
+    const experiencia = document.getElementById('experiencia-profesional').value;
+    //6th form
+    const resumen = document.getElementById('summary').value;
+
+    //personal information
     pdf.text(20, 20, `${nombres} ${apellidos}`);
     pdf.text(20, 30, `${estado}, ${pais}`);
-    pdf.text(20, 40, `Telefono:  ${telefono} - ${email}`);
-    // Agrega más contenido según sea necesario
+    pdf.text(20, 40, `${telefono} - ${email}`);
+    //education
+    pdf.text(20, 60, `EDUCATION`);
+    pdf.line(20, 65, 300, 65);
+    pdf.text(20, 70, `${carrera}    ${inicioEstudios} - ${graduacion}`);
+    pdf.text(20, 80, `${escuela}`);
+    pdf.text(20, 90, `${formacion}`);
+    //habilidades tecnicas
+    pdf.text(20, 110, `TECHNICAL SKILLS`);
+    pdf.line(20, 115, 300, 115);
+    //habilidades extra
+    pdf.text(20, 110, `SOFT SKILLS`);
+    pdf.line(20, 115, 300, 115);
+    //profesional experience
+    pdf.text(20, 120, `PROFESSIONAL EXPERIENCE`)
+    pdf.line(20, 125, 300, 125);
+    pdf.text(20, 130, `${inicioJob} - ${finalJob}`);
+    pdf.text(20, 140, `${puesto} - ${empresa}`);
+    pdf.text(20, 150, `${experiencia}`);
+    //resumen
+    pdf.text(20, 170, `TECHNICAL SKILLS`);
+    pdf.line(20, 175, 300, 175);
+    pdf.text(20, 180, `${resumen}`);
+    
+
 
     //get pdf content as a blob object
     const pdfBlob = pdf.output('blob');
