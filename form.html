@@ -57,7 +57,7 @@
                     <div class="form-field">
                         <div class="input-box">
                             <input type="text" class="input" id="nombres" name="nombres" required>
-                            <label for="nombres">Nombres</label>
+                            <label for="nombres">Nombre(s)</label>
                         </div>
                         <div class="input-box">
                             <input type="text" class="input" id="apellidos" name="apellidos" required>
@@ -66,15 +66,19 @@
                     </div>
                     <div class="form-field">
                         <div class="input-box">
-                            <input type="text" class="input" id="region" name="region" required>
-                            <label for="region">Región</label>
+                            <input type="text" class="input" id="pais" name="pais" required>
+                            <label for="pais">País</label>
                         </div>
+                        <div class="input-box">
+                            <input type="text" class="input" id="estado" name="estado" required>
+                            <label for="estado">Estado</label>
+                        </div>
+                    </div>
+                    <div class="form-field">
                         <div class="input-box">
                             <input type="tel" class="input" id="telefono" name="telefono" required>
                             <label for="telefono">Telefono</label>
                         </div>
-                    </div>
-                    <div class="form-field">
                         <div class="input-box">
                             <input type="email" class="input" id="email" name="email" required>
                             <label for="email">Correo electronico</label>
@@ -187,16 +191,20 @@
                             <textarea class="form-control" id="summary" name="summary" rows="4" required></textarea>
                         </div>
                     </div>
-                    <div class="form-field">
-                        <button class="btn-pdf">Generar PDF</button>
-                    </div>
+                </form>
+
+                <form class="form">
+                    <iframe id="pdfPreview" width="95%" height="95%" style="margin: 1rem;"></iframe>
                 </form>
             </div>
-
             <div class="nav-forms">
-                <button class="btn-prev" id="btn-prev">Anterior</button>
+                <button class="btn-prev" id="btn-prev" style="display: none;">Anterior</button>
                 <button class="btn-next" id="btn-next">Siguiente</button>
+                <button class="btn-show-pdf" id="showPdf">Mostrar PDF</button>
+                <button class="btn-pdf" id="generatePdf">Generar PDF</button>
             </div>
+
+
 
         </div>
     </div>

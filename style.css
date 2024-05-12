@@ -554,6 +554,21 @@ textarea {
     background: linear-gradient(to top right, #ffffff 20%, #013750 150%);
 }
 
+.btn-show-pdf {
+    border-style: none;
+    background: linear-gradient(to top right, rgb(88, 183, 5) 20%, #ffffff 150%);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 1rem;
+    cursor: pointer;
+    display: none;
+    transition: 0.5s;
+}
+
 .btn-pdf {
     border-style: none;
     background: linear-gradient(to top right, rgb(170, 9, 9) 20%, #ffffff 150%);
@@ -565,6 +580,7 @@ textarea {
     color: #ffffff;
     padding: 1rem;
     cursor: pointer;
+    display: none;
     transition: 0.5s;
 }
 
