@@ -189,9 +189,9 @@ function mostrarPDF() {
     const escuela = document.getElementById('escuela').value;
     const formacion = document.getElementById('formacion-academica').value;
     //3rd form
-
+    const techSkills = Array.from(document.querySelectorAll('#ulHabilidadesTecnicas li')).map(li => li.textContent);
     //4th form
-
+    const softSkills = Array.from(document.querySelectorAll('#ulHabilidades li')).map(li => li.textContent);
     //5th form
     const empresa = document.getElementById('empresa').value;
     const inicioJob = document.getElementById('inicio-job').value;
@@ -200,12 +200,12 @@ function mostrarPDF() {
     const experiencia = document.getElementById('experiencia-profesional').value;
     //6th form
     const resumen = document.getElementById('summary').value;
-    const url1Name = document.getElementById('url-1-descripcion');
-    const url1 = document.getElementById('url-1');
-    const url2Name = document.getElementById('url-2-descripcion');
-    const url2 = document.getElementById('url-2');
-    const url3Name = document.getElementById('url-3-descripcion');
-    const url3 = document.getElementById('url-3');
+    const url1Name = document.getElementById('url-1-descripcion').value;
+    const url1 = document.getElementById('url-1').value;
+    const url2Name = document.getElementById('url-2-descripcion').value;
+    const url2 = document.getElementById('url-2').value;
+    const url3Name = document.getElementById('url-3-descripcion').value;
+    const url3 = document.getElementById('url-3').value;
 
     //personal information
     pdf.text(20, 20, `${nombres} ${apellidos}`);
@@ -213,36 +213,45 @@ function mostrarPDF() {
     pdf.text(20, 40, `${telefono} - ${email}`);
     //education
     pdf.text(20, 60, `EDUCATION`);
-    pdf.line(20, 65, 300, 65);
+    pdf.line(20, 65, 200, 65);
     pdf.text(20, 70, `${carrera}    ${inicioEstudios} - ${graduacion}`);
     pdf.text(20, 80, `${escuela}`);
     pdf.text(20, 90, `${formacion}`);
     //habilidades tecnicas
     pdf.text(20, 110, `TECHNICAL SKILLS`);
-    pdf.line(20, 115, 300, 115);
+    techSkills.forEach((skill, index) => {
+        pdf.text(20, 120 + index * 10, skill);
+    });
+    pdf.line(20, 115, 200, 115);
     //habilidades extra
-    pdf.text(20, 110, `SOFT SKILLS`);
-    pdf.line(20, 115, 300, 115);
-    //profesional experience
-    pdf.text(20, 120, `PROFESSIONAL EXPERIENCE`)
-    pdf.line(20, 125, 300, 125);
-    pdf.text(20, 130, `${inicioJob} - ${finalJob}`);
-    pdf.text(20, 140, `${puesto} - ${empresa}`);
-    pdf.text(20, 150, `${experiencia}`);
-    //resumen
-    pdf.text(20, 170, `TECHNICAL SKILLS`);
-    pdf.line(20, 175, 300, 175);
-    pdf.text(20, 180, `${resumen}`);
-    pdf.text(20, 190, `${url1Name}: ${url1}`);
-    pdf.text(20, 200, `${url2Name}: ${url2}`);
-    pdf.text(20, 210, `${url3Name}: ${url3}`);
+    const softSkillsStartY = 120 + techSkills.length * 10 + 10;
+        pdf.text(20, softSkillsStartY, `SOFT SKILLS`);
+        pdf.line(20, softSkillsStartY + 5, 200, softSkillsStartY + 5);
+        softSkills.forEach((skill, index) => {
+            pdf.text(20, softSkillsStartY + 10 + index * 10, skill);
+        });
+     // Professional Experience
+     const experienceStartY = softSkillsStartY + 10 + softSkills.length * 10 + 10;
+     pdf.text(20, experienceStartY, `PROFESSIONAL EXPERIENCE`);
+     pdf.line(20, experienceStartY + 5, 200, experienceStartY + 5);
+     pdf.text(20, experienceStartY + 10, `${inicioJob} - ${finalJob}`);
+     pdf.text(20, experienceStartY + 20, `${puesto} - ${empresa}`);
+     pdf.text(20, experienceStartY + 30, `${experiencia}`);
+     // Summary and URLs
+     const summaryStartY = experienceStartY + 40;
+     pdf.text(20, summaryStartY, `SUMMARY`);
+     pdf.line(20, summaryStartY + 5, 200, summaryStartY + 5);
+     pdf.text(20, summaryStartY + 10, `${resumen}`);
+     pdf.text(20, summaryStartY + 20, `${url1Name}:  ${url1}`);
+     pdf.text(20, summaryStartY + 30, `${url2Name}:  ${url2}`);
+     pdf.text(20, summaryStartY + 40, `${url3Name}:  ${url3}`);
     
 
 
     //get pdf content as a blob object
     const pdfBlob = pdf.output('blob');
 
-    //create utl for blob
+    //create url for blob
     const pdfUrl = URL.createObjectURL(pdfBlob);
 
     //stablish the src of iframe to show pdf
@@ -264,7 +273,7 @@ function generarPDF() { //generate pdf
     pdf.text(20, 20, `Currículum Vitae de ${nombres} ${apellidos}`);
     pdf.text(20, 30, `${estado}, ${pais}`);
     pdf.text(20, 40, `Telefono:  ${telefono} - ${email}`);
-    // Agrega más contenido según sea necesario
+    
 
     pdf.save('curriculum.pdf');
 }
